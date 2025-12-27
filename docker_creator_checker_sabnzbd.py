@@ -1,7 +1,7 @@
 import os
 
-def detect_provider():
-    # Define checks: (file_path, search_string, return_value)
+def detect_docker_creator():
+    # Define checks: (file_path, search_string, creator)
     checks = [
         ("/build_version", "linuxserver", "linuxserver"),
         ("/bin/init.sh", "binhex", "binhex"),
@@ -22,5 +22,5 @@ def detect_provider():
     return "unknown"  # Return a fallback value if no matches are found
 
 # Execution
-provider = detect_provider()
-print(f"Detected: {provider}")
+docker_creator = detect_docker_creator()
+print(f"Detected: {docker_creator}")
